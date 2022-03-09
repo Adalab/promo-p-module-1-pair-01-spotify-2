@@ -1,155 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Spotify</title>
-    <link rel="stylesheet" href="">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Spotify</title>
+  <link rel="stylesheet" href="./scss/reset.css" />
+  <link rel="stylesheet" href="./scss/signup.css">
+
 </head>
 
 <body>
-    <header>
-        Logo de Spotify IMG
-        Regístrate gratis para escuchar.
-        Regístrate con FB.
-        Regístrate con Google.
-    </header>
+  <header class="header">
+    Logo de Spotify IMG
+    Regístrate gratis para escuchar.
+    Regístrate con FB.
+    Regístrate con Google.
+  </header>
 
-    <main>
-        <h2>Regístrate con tu correo electrónico</h2>
+  <main class="main">
+    <h2 class="title">Regístrate con tu correo electrónico</h2>
 
-        <form action="https://adalab-server-form.herokuapp.com/" method="post">
-        <fieldset class="mailpass">
-        <label for="emailAddress">¿Cuál es tu correo electrónico?</label>
-        <input type="email" 
-        id="emailAddress" 
-        name="emailAddress"
-        placeholder="Pon tu correo electrónico." />
+    <form action="https://adalab-server-form.herokuapp.com/" method="post" class="form">
+      <fieldset class="form__mailpass">
+        <div class="mailpass__div">
+          <label for="emailAddress">¿Cuál es tu correo electrónico?</label>
+          <input type="email" id="emailAddress" name="emailAddress" placeholder="Pon tu correo electrónico." />
+        </div>
+        <!-- Este div está hecho para probar si podemos quitar margins y paddings que le salen al label+input y en general al fieldset. COMPROBAR cómo quitarlos -->
 
         <label for="confirmEmail">Confirma el correo electrónico</label>
-        <input type="email" 
-        id="confirmEmail" 
-        name="confirmEmail"
-        placeholder="Vuelve a poner tu correo electrónico." />
+        <input type="email" id="confirmEmail" name="confirmEmail" placeholder="Vuelve a poner tu correo electrónico." />
 
         <label for="password">Crea una contraseña</label>
-        <input type="password" 
-        id="password" 
-        name="password" 
-        placeholder="Crea una contraseña."/>
+        <input type="password" id="password" name="password" placeholder="Crea una contraseña." />
 
         <label for="firstName">¿Cómo quieres que te llamemos?</label>
-        <input id="firstName" 
-        type="text" 
-        name="firstName"
-        placeholder="Pon un nombre de perfil." />
+        <input id="firstName" type="text" name="firstName" placeholder="Pon un nombre de perfil." />
         <p>Esto aparece en tu pefil.</p>
-        </fieldset>
-    
-        <fieldset class="age">
-            <label for="birth">¿Cuál es tu fecha de nacimiento?</label>
-            <p>Día</p>
-            <input type="number" 
-            id="day"
-            name="day"
-            placeholder="DD" 
-            min="1"
-            max="31"/> 
+      </fieldset>
 
-            <p>Mes</p>
-            <select id="birth" name="birth">
-              <option value="ene">Enero</option>
-              <option value="feb">Febrero</option>
-              <option value="mar">Marzo</option>
-              <option value="abr">Abril</option>
-              <option value="may">Mayo</option>
-              <option value="jun">Junio</option>
-              <option value="jul">Julio</option>
-              <option value="ago">Agosto</option>
-              <option value="sep">Septiembre</option>
-              <option value="oct">Octubre</option>
-              <option value="nov">Noviembre</option>
-              <option value="dic">Diciembre</option>
-            </select>
+      <fieldset class="main__age">
+        <label for="birth">¿Cuál es tu fecha de nacimiento?</label>
+        <p>Día</p>
+        <input type="number" id="day" name="day" placeholder="DD" min="1" max="31" />
 
-            <p>Año</p>
-            <input type="number" 
-            id="year"
-            name="year"
-            placeholder="AAAA" 
-            min="2004"
-            max="1942"/> 
-        </fieldset>
+        <p>Mes</p>
+        <select id="birth" name="birth">
+          <option value="ene">Enero</option>
+          <option value="feb">Febrero</option>
+          <option value="mar">Marzo</option>
+          <option value="abr">Abril</option>
+          <option value="may">Mayo</option>
+          <option value="jun">Junio</option>
+          <option value="jul">Julio</option>
+          <option value="ago">Agosto</option>
+          <option value="sep">Septiembre</option>
+          <option value="oct">Octubre</option>
+          <option value="nov">Noviembre</option>
+          <option value="dic">Diciembre</option>
+        </select>
 
-        <fieldset class="gender">
-            <h3>¿Cuál es tu género?</h3>
-<div>
-  <label for="gender1">
-    <input
-      id="gender1"
-      type="radio"
-      value="male"
-      name="genders"
-    />
-    Hombre
-  </label>
-</div>
+        <p>Año</p>
+        <input type="number" id="year" name="year" placeholder="AAAA" min="1942" max="2004" />
+      </fieldset>
 
-<div>
-  <label for="gender2">
-    <input
-      id="gender2"
-      type="radio"
-      value="female"
-      name="genders"
-    />
-    Mujer
-  </label>
-</div>
+      <fieldset class="gender">
+        <h3>¿Cuál es tu género?</h3>
+        <div class="gender__male">
+          <label for="gender1">
+            <input id="gender1" type="radio" value="male" name="genders" />
+            Hombre
+          </label>
+        </div>
 
-<div>
-  <label for="gender3">
-    <input
-      id="gender3"
-      type="radio"
-      value="nonbinary"
-      name="genders"
-    />
-    No binario
-  </label>
-</div>
+        <div class="gender__female">
+          <label for="gender2">
+            <input id="gender2" type="radio" value="female" name="genders" />
+            Mujer
+          </label>
+        </div>
 
-<fieldset>
-<div>
-  <label for="offers">
-    <input
-      id="offers"
-      type="checkbox"
-      value="offers"
-      name="more"
-    />
-    Quiero que me enviéis novedades y ofertas de Spotify
-  </label>
-</div>
-<div>
-  <label for="share">
-    <input
-      id="share"
-      type="checkbox"
-      value="share"
-      name="more"
-    />
-    Compartir mis datos de registro con los proveedores de contenidos de Spotifly para fines de marketing. Ten en cuenta que tus datos peuden ser transfereidos a un país de fuera del EEE, tal y como se recoge en nuestra Política de Privacidad.
-  </label>
-</div>
-</fieldset>
+        <div class="gender_bi">
+          <label for="gender3">
+            <input id="gender3" type="radio" value="nonbinary" name="genders" />
+            No binario
+          </label>
+        </div>
+      </fieldset>
 
-<input type="submit" value="Registrarte" />
+      <fieldset>
+        <div>
+          <label for="offers">
+            <input id="offers" type="checkbox" value="offers" name="more" />
+            Quiero que me enviéis novedades y ofertas de Spotify
+          </label>
+        </div>
 
-</form>
+        <div>
+          <label for="share">
+            <input id="share" type="checkbox" value="share" name="more" />
+            Compartir mis datos de registro con los proveedores de contenidos de Spotifly para fines de marketing. Ten
+            en cuenta que tus datos peuden ser transfereidos a un país de fuera del EEE, tal y como se recoge en nuestra
+            Política de Privacidad.
+          </label>
+        </div>
+      </fieldset>
 
-</main>
+      <input type="submit" value="Registrarte" />
+
+    </form>
+
+  </main>
 
 </body>
+
 </html>
